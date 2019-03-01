@@ -4,16 +4,17 @@ services:
   seleniumhub:
     restart: always
     container_name: seleniumhub
-    image: deinchristian/rpi-selenium-hub
+    image: kip9/rpi-selenium-hub
     ports:
       - "4444:4444"
 
   selenium:
     restart: always
     container_name: selenium
-    image: deinchristian/rpi-selenium-node-chrome
+    image: kip9/rpi-selenium-node-chrome
     ports:
       - "5900:5900"
+      - "5555:5555"
     shm_size: 128M
     depends_on:
       - seleniumhub

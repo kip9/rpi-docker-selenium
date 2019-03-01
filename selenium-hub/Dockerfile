@@ -1,4 +1,4 @@
-FROM deinchristian/rpi-selenium-base
+FROM kip9/rpi-selenium-base
 
 #========================
 # Selenium Configuration
@@ -7,7 +7,7 @@ FROM deinchristian/rpi-selenium-base
 EXPOSE 4444
 
 # As integer, maps to "maxSession"
-ENV GRID_MAX_SESSION 5
+ENV GRID_MAX_SESSION 3
 # In milliseconds, maps to "newSessionWaitTimeout"
 ENV GRID_NEW_SESSION_WAIT_TIMEOUT -1
 # As a boolean, maps to "throwOnCapabilityNotPresent"
@@ -19,9 +19,9 @@ ENV GRID_CLEAN_UP_CYCLE 5000
 # In seconds, maps to "browserTimeout"
 ENV GRID_BROWSER_TIMEOUT 0
 # In seconds, maps to "timeout"
-ENV GRID_TIMEOUT 30
+ENV GRID_TIMEOUT 300
 # Debug
-ENV GRID_DEBUG false
+ENV GRID_DEBUG true
 
 COPY generate_config /opt/selenium/generate_config
 COPY entry_point.sh /opt/bin/entry_point.sh

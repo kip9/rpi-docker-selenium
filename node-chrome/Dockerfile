@@ -1,4 +1,4 @@
-FROM deinchristian/rpi-selenium-node-base
+FROM kip9/rpi-selenium-node-base
 
 USER root
 
